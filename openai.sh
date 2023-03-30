@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 if [ -z "$1" ]; then
@@ -39,3 +38,4 @@ content=$(jq -n --arg json "$response" -r '($json|fromjson|.choices[0].message.c
 
 echo "Response from ChatGPT:"
 echo "$content"
+
