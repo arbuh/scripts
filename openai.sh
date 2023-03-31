@@ -36,6 +36,7 @@ response=$(curl -s -X POST "$endpoint" \
 
 content=$(jq -n --arg json "$response" -r '($json|fromjson|.choices[0].message.content)')
 
-echo "Response from ChatGPT:"
-echo "$content"
+
+processed_content=$(echo "$content" | xclip -selection clipboard -f)
+echo "$processed_content"
 
